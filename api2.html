@@ -1,0 +1,72 @@
+<!DOCTYPE html "-//W3C//DTD XHTML 1.0 Strict//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+  <link rel="stylesheet" type="text/css" href="style2.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+    <style>
+.footer {
+   position: fixed;
+   left: 0;
+   bottom: 0;
+   width: 100%;
+   background-color: #000000;
+   color: white;
+   text-align: center;
+}
+</style>
+    <title>Google Books Embedded Viewer API Example</title>
+    <script type="text/javascript" src="https://www.google.com/books/jsapi.js"></script>
+    <script type="text/javascript">
+      google.books.load();
+
+      function initialize() {
+        var viewer = new google.books.DefaultViewer(document.getElementById('viewerCanvas'));
+        viewer.load('ISBN:9786020461991');
+      }
+   google.books.setOnLoadCallback(initialize);
+    </script>
+  </head>
+  <body class="container-fluid">
+    <div class="row">
+      <div class="col-12">
+
+        <div id="viewerCanvas" style="width: auto; height: 100%"></div> 
+
+        <div class="overlay" id="overlay">
+  <div class="ct">
+      <h1 style="font-size:17px;">Please Check First:</h1>
+      <hr>
+    <p>To see our book library service available in your country you need</p>
+      <p><span class="blue">Free Membership Registration</span></p>
+    <p>You have to create a <span class="red">FREE ACCOUNT</span> in order to continue <span class="blue">READING</span> or  <span class="blue">DOWNLOAD</span>
+      <br> <br>
+    <a href="" rel="nofollow tag" id="continue" class="x-domain">Create my account now</a>
+
+    <br>
+    <div class="secure">Secure Verified</div>
+
+      <hr>
+        <p style="margin-top:3px;font-size:10px;">
+          <center><a rel="nofolow" href="/">Home</a> | <a rel="nofolow" href="/contact.php">Contact</a> | <a rel="nofolow" href="/dmca.php">DMCA</a> | <a rel="nofolow" href="/privacy.php">Privacy and Policy</a></center>
+        </p>
+
+
+    </div>
+  </div>
+
+        <div class="footer">
+  <button type="button" class="btn btn-primary" id="button" href="#" data-showdiv="overlay" style="margin: 10px 10px;">Download</button>
+      </div>
+    </div>
+
+    <script type="text/javascript">
+     document.getElementById('button').addEventListener("click", function() {
+  document.querySelector('.overlay').style.display = "flex";
+});
+
+    </script>
+  </body>
+</html>
